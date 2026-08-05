@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Recommended Donors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <h2 class="text-center text-primary">
+        🤖 AI Recommended Donors
+    </h2>
+
+    <table class="table table-bordered mt-4">
+
+        <tr class="table-primary">
+            <th>Name</th>
+            <th>Blood Group</th>
+            <th>City</th>
+            <th>Mobile</th>
+        </tr>
+
+        {% for donor in donors %}
+
+        <tr>
+            <td>{{ donor.donor_name }}</td>
+            <td>{{ donor.blood_group }}</td>
+            <td>{{ donor.city }}</td>
+            <td>{{ donor.mobile }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

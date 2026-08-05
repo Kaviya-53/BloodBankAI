@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+      body {
+        background: linear-gradient(to right, #fff5f5, #ffffff);
+      }
+
+      .search-box {
+        background-color: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+      }
+
+      .search-box:hover {
+        transform: translateY(-5px);
+        transition: 0.3s;
+      }
+    </style>
+
+    <title>Search Blood Donor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+
+    .card {
+        border-radius: 20px;
+    }
+
+    .table {
+        border-radius: 15px;
+    }
+
+    .table tr:hover {
+        background-color: #f8f9fa;
+    }
+
+   </style>
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-10">
+
+            <div class="search-box">
+
+<div class="card shadow">
+
+<div class="card-header bg-danger text-white">
+<h3>🔍 Search Blood Donors</h3>
+</div>
+
+<div class="card-body">
+
+<form method="POST">
+
+<select class="form-select mb-3" name="blood_group" required>
+    <option value="">Select Blood Group</option>
+    <option>A+</option>
+    <option>A-</option>
+    <option>B+</option>
+    <option>B-</option>
+    <option>AB+</option>
+    <option>AB-</option>
+    <option>O+</option>
+    <option>O-</option>
+</select>
+
+<button class="btn btn-danger w-100" type="submit">
+    🔍 Search Blood
+</button>
+
+</form>
+
+</div>
+</div>
+</div>
+
+{% if donors %}
+
+<hr>
+
+<h4>Available Donors</h4>
+
+<table class="table table-bordered">
+
+<tr class="table-danger">
+<th>Name</th>
+<th>Blood Group</th>
+<th>Mobile</th>
+<th>City</th>
+<th>Location</th>
+<th>Status</th>
+</tr>
+
+{% for donor in donors %}
+
+<tr>
+    <td>{{ donor.donor_name }}</td>
+    <td>{{ donor.blood_group }}</td>
+    <td>{{ donor.mobile }}</td>
+    <td>{{ donor.city }}</td>
+
+    <td>
+       <a href="{{ donor.location }}" target="_blank">
+           📍 Open Map
+       </a>
+    </td>
+
+    <td>
+        <span class="badge bg-success">
+           Available
+        </span>
+    </td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
