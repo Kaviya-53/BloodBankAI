@@ -1,45 +1,102 @@
-# AI-Based Blood Bank Management System
+# 🩸 AI-Based Blood Bank Management System
 
-## Project Description
+## 📌 Project Overview
 
-The AI-Based Blood Bank Management System is designed to connect blood donors, hospitals, and patients through an intelligent web application. The system allows users to register, search for donors, send emergency requests, and generate reports.
+AI-Based Blood Bank Management System is a web-based application that connects blood donors, hospitals, and patients through an intelligent platform.
 
-## Technologies Used
+The system helps users register as donors, search for available blood donors, send emergency blood requests, and manage blood bank activities efficiently.
 
-- Python
-- Flask
-- MySQL
+---
+
+## 🎯 Problem Statement
+
+During emergency situations, finding the required blood group quickly is difficult. This project provides a digital platform to reduce the time required for searching and managing blood donors.
+
+---
+
+## 🚀 Features
+
+- User Registration and Login
+- Donor Registration
+- Search Blood Donors
+- Emergency Blood Request
+- Admin Dashboard
+- Blood Availability Management
+- AI-based donor matching
+- User-friendly interface
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
 - HTML
 - CSS
 - Bootstrap
+
+### Backend
+- Python
+- Flask
+
+### Database
+- MySQL
+
+### Other Tools
+- GitHub
 - Matplotlib
 
-## Features
+---
 
-- User registration
-- User login
-- Donor registration
-- Blood search
-- AI donor recommendation
-- Emergency blood request
-- Hospital registration
-- Donation history
-- Statistics dashboard
-- PDF report generation
+## 📂 Project Structure
 
-## Database Tables
+---
 
-- users
-- donors
-- hospitals
-- requests
-- donation_history
-- emergency_requests
+## 📸 Screenshots
 
-## Developed By
+### Home Page
+![Home](screenshots/home.png)
 
-Kaviya G
+### Login Page
+![Login](screenshots/login.png)
 
-Department of Computer Science and Business Systems (CSBS)
+### Register Page
+![Register](screenshots/register.png)
 
-VSB Engineering College
+### Donor Page
+![Donor](screenshots/donor.png)
+
+### Admin Page
+![Admin](screenshots/admin.png)
+
+---
+
+## ▶️ How to Run the Project
+
+1. Install required packages
+
+```bash
+pip install -r requirements.txt
+
+
+---
+
+## Step 4 – Add Future Enhancements
+
+Below that paste:
+
+```markdown
+---
+
+## 🔮 Future Enhancements
+
+- AI-based blood demand prediction
+- Mobile application support
+- SMS notification for emergency blood requests
+- Real-time donor location tracking
+
+---
+
+## 👩‍💻 Developed By
+
+**Kaviya G**  
+B.Tech - Computer Science and Business Systems
