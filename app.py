@@ -72,22 +72,21 @@ def register():
             sql = """
             INSERT INTO users
             (full_name, age, gender, blood_group, mobile, email, address, password)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             """
-
             cursor.execute(
-                sql,
-                (
-                    full_name,
-                    age,
-                    gender,
-                    blood_group,
-                    mobile,
-                    email,
-                    address,
-                    hashed_password
-                )
-            )
+               sql,
+               (
+                 full_name,
+                 age,
+                 gender,
+                 blood_group,
+                 mobile,
+                 email,
+                 address,
+                 hashed_password.decode("utf-8")
+               )
+           )
 
             connection.commit()
 
@@ -118,7 +117,7 @@ def login():
         connection = get_connection()
         cursor = connection.cursor()
 
-        sql = "SELECT * FROM users WHERE email=%s"
+        sql = "SELECT * FROM users WHERE email=?"
         cursor.execute(sql, (email,))
 
         user = cursor.fetchone()
@@ -159,7 +158,7 @@ def donor_register():
         sql = """
         INSERT INTO users
         (full_name, age, gender, blood_group, mobile, email, address, password)
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         """
 
         cursor.execute(
@@ -205,7 +204,7 @@ def search():
 
         sql = """
         SELECT * FROM donors
-        WHERE blood_group=%s
+        WHERE blood_group=?
         AND available='Yes'
         """
 
@@ -236,8 +235,8 @@ def recommend():
         sql = """
         SELECT *
         FROM donors
-        WHERE blood_group=%s
-        AND city=%s
+        WHERE blood_group=?
+        AND city=?
         AND available='Yes'
         ORDER BY last_donation ASC
         LIMIT 1
@@ -271,7 +270,7 @@ def request_blood():
         sql = """
         INSERT INTO requests
         (patient_name, blood_group, city, mobile)
-        VALUES (%s, %s, %s, %s)
+        VALUES (?, ?, ?, ?)
         """
 
         cursor.execute(
@@ -332,8 +331,8 @@ def ai_search():
     sql = """
     SELECT *
     FROM donors
-    WHERE blood_group=%s
-    AND city=%s
+    WHERE blood_group=?
+    AND city=?
     AND available='Yes'
     LIMIT 3
     """
@@ -367,7 +366,7 @@ def emergency():
         sql = """
         INSERT INTO emergency_requests
         (patient_name, hospital_name, city, mobile, blood_group)
-        VALUES (%s, %s, %s, %s, %s)
+        VALUES (?, ?, ?, ?, ?)
         """
 
         cursor.execute(
@@ -471,7 +470,7 @@ def hospital():
         sql = """
         INSERT INTO hospitals
         (hospital_name, city, mobile, email)
-        VALUES (%s, %s, %s, %s)
+        VALUES (?, ?, ?, ?)
         """
 
         cursor.execute(
